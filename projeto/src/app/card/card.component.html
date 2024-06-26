@@ -1,0 +1,24 @@
+<!-- <p>Ola mundo do componente CARD  ❤🤣🤣😂😍❤❤🐱‍🚀🤦‍♂️🤳🐱‍🚀✌👩‍🦲👩‍🦱🎅👩‍⚖️👩‍🚒🦸‍♀️🧛‍♀️🙇‍♂️🤦‍♀️👩‍🦽👩‍🦽👩‍🦽🧎‍♂️</p>
+<button>Comprar um coração</button>
+<p>Nome: {{nome}}</p>
+
+<ul>
+    <li *ngFor="let fruta of frutas"> {{ fruta }} </li>
+
+
+    <button *ngIf="idade >= 18" (onclick)="clicarBotao()">
+    Clique aqui para fazer sua carteira de motorista
+    </button>
+    
+</ul> -->
+
+<div *ngFor= "let produto of Produtos" class="card">
+    <div class="img">
+        <img src="{{produto.image}}" alt="" width="200px">
+    </div>
+    <div class="infos">
+        <p class="titulo">{{produto.title}}</p>
+        <p class="descricao">{{produto.description}}</p>
+        <button class="comprar" (click)="comprar()">Comprar</button>
+    </div>
+</div>
