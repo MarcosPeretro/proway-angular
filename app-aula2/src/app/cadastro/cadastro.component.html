@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Novo contato</h1>
+    <form #f="ngForm" (ngSubmit)="recebeDados(f.value)">
+        
+        <div>
+            <label for="nome">Nome : </label>
+            <input type="text" name="nome" id="nome" placeholder="Informe Nome" ngModel class="form-control">
+        </div>
+        
+        <div>
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" placeholder="Informe Email" ngModel class="form-control">
+        </div>
+        
+        <div>
+            <label for="fone">Telephone : </label>
+            <input type="tel" name="fone" id="fone" placeholder="Informe Fone" ngModel class="form-control">
+        </div>
+        
+
+        <button>Gravar</button>
+    </form>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Fone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let ct of contatos">
+                    <td>{{ct.nome}}</td>
+                    <td>{{ct.email}}</td>
+                    <td>{{ct.fone}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

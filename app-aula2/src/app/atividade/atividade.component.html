@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Cadastro</h1>
+    <form #f="ngForm" (ngSubmit)="dados(f.value)">
+        
+        <div>
+            <label for="id">Id</label>
+            <input type="text" name="id" id="id" ngModel class="form-control">
+        </div>
+
+        <div>
+            <label for="descricao">Descrição</label>
+            <input type="text" name="descricao" Descrição="descricao" ngModel class="form-control">
+        </div>
+
+        <div>
+            <label for="preco">Preço</label>
+            <input type="text" name="preco" id="preco" ngModel class="form-control">
+        </div>
+
+        <button>Cadastrar</button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let A of Armazenamento">
+                <td>{{A.id}}</td>
+                <td>{{A.descricao}}</td>
+                <td>{{A.preco}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
