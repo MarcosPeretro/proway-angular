@@ -1,0 +1,19 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let a of produtos">
+                <td>{{a.id}}</td>
+                <td>{{a.title}}</td>
+                <td>{{a.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="carregarProdutos()">carregar</button>
+</div>
