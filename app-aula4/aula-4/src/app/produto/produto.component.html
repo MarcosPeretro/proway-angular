@@ -1,0 +1,55 @@
+<div class="container">
+    <h2>Novo Produto</h2>
+    <form #f="ngForm" (ngSubmit)="gerarDados()">
+        <div *ngIf="id != 0">
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id" [ngModel]="id" readonly>
+        </div>
+        <label for="descricao">Informe descrição</label>
+        <input type="text" name="descricao" id="descricao" class="form-control" [(ngModel)]="descricao" required >
+        
+        <div *ngIf="f.submitted && !descricao">
+            A descrição é obrigatorio
+        </div>
+
+        <label for="preco">Informe preço</label>
+        <input type="text" name="preco" id="preco" class="form-control" [(ngModel)]="preco" required>
+
+        <div *ngIf="f.submitted && !descricao">
+            O preço é obrigatorio
+        </div>
+
+        <label for="estoque">Informe estoque</label>
+        <input type="text" name="estoque" id="estoque" class="form-control" [(ngModel)]="estoque" required>
+
+        <div *ngIf="f.submitted && !descricao">
+            O estoque é obrigatorio
+        </div>
+
+        <button class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Lista de produto</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descricao</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of produtos">
+                <td>{{p.id}}</td>
+                <td>{{p.descricao}}</td>
+                <td>
+                    <a [routerLink]="['/detalhe', p.id]">Detail</a>
+                    <a class="m-3" (click)="excluir(p.id)">Excluir</a>
+                    <a class="m-3" (click)="editar(p.id)">Editar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
